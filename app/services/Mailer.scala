@@ -12,7 +12,7 @@ import scala.concurrent.duration._
 object Mailer {
 
   def sendSantaEmail(sender: Person, recipient: Person) {
-    val msg = views.html.mail(recipient.name)
+    val msg = views.html.mail(s"${recipient.name} - ${recipient.email}" )
     sendEmail("Secret Santa", sender.email, (None, Some(msg)))
   }
 

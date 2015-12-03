@@ -1,6 +1,8 @@
 package services
 
 import org.springframework.stereotype.Service
+import play.api.libs.json._
+import play.api.libs.functional.syntax._
 
 trait SantaService {
   def formPairsForSecretSanta(persons: Seq[Person]): Seq[(Person, Person)]
@@ -22,7 +24,7 @@ class SantaServiceImpl extends SantaService {
           loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
 	      case (a :: as, b :: bs) =>
 		      val tx = Random.shuffle(txs).head
-		      val rx = Random.shuffle(rxs filterNot {_ == tx}).head
+		      val rx = Random.shuffle(rxs filterNot {_ == tx}).headOption.getOrElse(tx)
 		      loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
 		    case (Nil, Nil) =>
 		      acc
@@ -38,4 +40,10 @@ class SantaServiceImpl extends SantaService {
 
 }
 
+
 case class Person(email: String, name: String)
+
+object Person {
+  implicit val personReads = Json.reads[Person]
+  implicit val personWrites = Json.writes[Person]
+}

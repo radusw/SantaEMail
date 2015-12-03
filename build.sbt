@@ -29,3 +29,17 @@ resolvers ++= Seq(
   "Apache Snapshots" at "https://repository.apache.org/content/repositories/snapshots/",
   "Sonatype Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 )
+
+scalacOptions ++= Seq(
+  "-feature",
+  "-unchecked",
+  "-deprecation",
+  "-Ywarn-adapted-args",
+  "-Ywarn-dead-code",
+  "-Ywarn-inaccessible",
+  "-Ywarn-nullary-override",
+  "-Ywarn-nullary-unit"
+)
+
+/* for Eclipse users */
+EclipseKeys.withSource := true
