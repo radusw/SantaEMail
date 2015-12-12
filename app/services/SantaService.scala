@@ -23,12 +23,12 @@ class SantaServiceImpl extends SantaService {
           val rx = (rxs filterNot { _ == tx }).head
           loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
         case (a :: as, b :: bs) =>
-		      val tx = Random.shuffle(txs).head
-		      val rx = Random.shuffle(rxs filterNot {_ == tx}).headOption.getOrElse(tx)
-		      loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
+          val tx = Random.shuffle(txs).head
+          val rx = Random.shuffle(rxs filterNot {_ == tx}).headOption.getOrElse(tx)
+          loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
        case (Nil, Nil) =>
-		      acc
-	    }
+         acc
+       }
     val pairs = loop(Nil, persons, persons)
 
     pairs
