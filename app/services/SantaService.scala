@@ -16,9 +16,9 @@ class SantaServiceImpl extends SantaService {
     import scala.util.Random
 
     @scala.annotation.tailrec
-	  def loop(acc: Seq[(Person, Person)], txs: Seq[Person], rxs: Seq[Person]): Seq[(Person, Person)]  =
-	    (txs, rxs) match {
-	      case (a :: as, b :: bs) if (txs.size == 2 && (txs intersect rxs).isDefinedAt(0)) =>
+    def loop(acc: Seq[(Person, Person)], txs: Seq[Person], rxs: Seq[Person]): Seq[(Person, Person)] =
+      (txs, rxs) match {
+        case (a :: as, b :: bs) if (txs.size == 2 && (txs intersect rxs).isDefinedAt(0)) =>
           val tx = (txs intersect rxs).head
           val rx = (rxs filterNot { _ == tx }).head
           loop(acc :+ ((tx, rx)), txs filterNot { _ == tx}, rxs filterNot { _ == rx})
