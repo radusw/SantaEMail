@@ -5,7 +5,7 @@ version := "1.0-SNAPSHOT"
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.11.7"
-val springVersion = "4.2.2.RELEASE"
+val springVersion = "4.0.3.RELEASE"
 
 libraryDependencies ++= Seq(
   ws,
