@@ -5,7 +5,7 @@
 
 ### How-To
 ##### 1. Edit the configuration file (e.g. `conf/prod.conf`) file or create one
-##### 2. Publish locally and run the container using Docker and pass the configation file
+##### 2. Using Docker, publish the image locally and run the container
 ```commandline
 $sbt docker:publishLocal
 $docker run -d -p 9000:9000 --restart unless-stopped --name santa radusw/santa-email:1.0 "conf/prod.conf"
