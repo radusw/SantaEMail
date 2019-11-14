@@ -106,7 +106,7 @@ lazy val dockerSettings = Seq(
     Cmd("ADD", "opt /opt"),
     Cmd("WORKDIR", "/opt/santa-email"),
     // Cmd("CMD", "java", "-cp", "'lib/*'", "-Dpidfile.path=/dev/null", "Main", "conf/docker.conf")
-    ExecCmd("ENTRYPOINT", "bin/santa-email", "conf/docker.conf")
+    ExecCmd("ENTRYPOINT", "bin/santa-email")
   ),
   dockerExposedPorts := Seq(9000),
   version in Docker := version.value,
