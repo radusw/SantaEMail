@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title>Santa is here!</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="shortcut icon" href="app/favicon.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="app/client.js"></script>
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, sans-serif}
+        h1 {letter-spacing: 6px}
+        td {padding: 0 20px 0 20px}
+    </style>
+</head>
+<body>
+
+<div class="content" style="max-width:1500px">
+    <center>
+        <h3 id="msg">🎁🌲🎁 Who's in? 🎁🌲🎁</h3>
+        <div id="data">
+            <table id="dataTable">
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>E-Mail</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" id="name" /></td>
+                    <td><input type="text" id="email" /></td>
+                    <td><input type="button" id="delButton" value="Delete" onclick="deleteRow(this)" /></td>
+                    <td><input type="button" id="addMoreButton" value="Add" onclick="insRow() "/></td>
+                </tr>
+            </table>
+            <br />
+            <br/>
+            <button id="run" onclick="run()">Done! Send Secret Santa emails ...</button>
+        </div>
+    </center>
+
+</div>
+
+</body>
+</html>

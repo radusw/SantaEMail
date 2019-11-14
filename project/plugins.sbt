@@ -1,8 +1,3 @@
-// The Play plugin
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.3.10")
-
-addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.4.0")
-
-// web plugins
-
-addSbtPlugin("com.typesafe.sbt" % "sbt-coffeescript" % "1.0.0")
+addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.2")
+addSbtPlugin("com.typesafe.sbt" % "sbt-twirl"           % "1.3.13")
+addSbtPlugin("com.eed3si9n"     % "sbt-buildinfo"       % "0.7.0")
