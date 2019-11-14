@@ -2,10 +2,10 @@
 
 - Secret Santa between your friends using email notifications
 - Example project for BSUG - http://www.meetup.com/Bucharest-Scala-User-Group/
-- Image: https://hub.docker.com/repository/docker/radusw/santa-email
+- Image: https://hub.docker.com/r/radusw/santa-email
 
 ### Instructions
-Check [here](https://hub.docker.com/repository/docker/radusw/santa-email)
+Check [here](https://hub.docker.com/r/radusw/santa-email)
 
 ### Build and run locally
 1. Edit the configuration file (e.g. `conf/prod.conf`)
