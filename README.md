@@ -9,7 +9,7 @@ Check [here](https://hub.docker.com/repository/docker/radusw/santa-email)
 
 ### Build and run locally
 1. Edit the configuration file (e.g. `conf/prod.conf`)
-2. Using Docker, publish the image locally and run the container.
+2. Using SBT and Docker, publish the image locally and run the container.
 ```commandline
 $ sbt docker:publishLocal
 
