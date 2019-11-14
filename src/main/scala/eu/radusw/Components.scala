@@ -15,10 +15,10 @@ class Components(config: AppConfig.Config) {
   implicit val blockingOpsScheduler: SchedulerService = Scheduler.io()
 
   val mailService: MailService[Task] = new MailServiceInterpreter(config)
-  val santaService: SantaService[Task] = new SantaServiceInterpreter()
+  val santaService: SantaService[Task] = new SantaServiceInterpreter(mailService)
 
   val versionApi = new VersionApi()
-  val mainApi = new MainApi(santaService, mailService)
+  val mainApi = new MainApi(santaService)
 
   val frontendResource = new FrontendResource()
 }

@@ -2,14 +2,14 @@ package eu.radusw.api
 
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
+import cats.data.NonEmptyList
 import eu.radusw.model.Person
-import eu.radusw.services.{MailService, SantaService}
+import eu.radusw.services.SantaService
 import monix.eval.Task
 import monix.execution.Scheduler
 
 final class MainApi(
-  santaService: SantaService[Task],
-  mailService: MailService[Task],
+  santaService: SantaService[Task]
 )(
   implicit
   scheduler: Scheduler
@@ -21,12 +21,8 @@ final class MainApi(
     post {
       pathPrefix("run") {
         pathEndOrSingleSlash {
-          entity(as[List[Person]]) { input =>
-            val program = for {
-              pairs <- santaService.formPairsForSecretSanta(input)
-              result <- mailService.sendEmails(pairs)
-            } yield result
-            complete(program.runToFuture)
+          entity(as[NonEmptyList[Person]]) { input =>
+            complete(santaService.sendSecretSantaEmails(input).runToFuture)
           }
         }
       }

@@ -3,7 +3,7 @@ package eu.radusw.api
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 
-class VersionApi() {
+final class VersionApi() {
   import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport._
 
   val route: Route = pathPrefix("version") {
