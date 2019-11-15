@@ -1,4 +1,4 @@
-# SantaEMail
+# santa-email
 
 - Secret Santa between your friends using email notifications
 - Example project for BSUG - http://www.meetup.com/Bucharest-Scala-User-Group/
@@ -8,7 +8,7 @@
 Check [here](https://hub.docker.com/r/radusw/santa-email)
 
 ### Build and run locally
-1. Edit the configuration file (e.g. `conf/prod.conf`)
+1. Edit the configuration file (e.g. `conf/prod.conf`).
 2. Using SBT and Docker, publish the image locally and run the container.
 ```commandline
 $ sbt docker:publishLocal
@@ -22,4 +22,4 @@ $ docker logs santa --follow
 
 $ curl http://localhost:9000/api/version
 ```
-3. Open the browser and go to `http://localhost:9000/app`
+3. Open the browser and go to `http://localhost:9000/app`.
