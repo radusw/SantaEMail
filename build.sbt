@@ -33,7 +33,9 @@ lazy val commonSettings = Seq(
     "-J-XX:+UseConcMarkSweepGC",
     "-J-XX:+UseParNewGC",
     "-J-XX:+UseCodeCacheFlushing",
-    "-J-XX:+UseCompressedOops"
+    "-J-XX:+UseCompressedOops",
+    "-J-XX:MaxRAMPercentage=75.0",
+    "-J-XshowSettings:all"
   )
 )
 
